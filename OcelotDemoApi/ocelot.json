@@ -1,0 +1,25 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      //"UseServiceDiscovery": true,
+      "UpstreamPathTemplate": "/{url}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "ServiceName": "zklService",
+      "LoadBalancerOptions": {
+        //"Type": "LeastConnection"
+        "Type": "RoundRobin"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:6299",
+    "ServiceDiscoveryProvider": {
+      "Scheme": "http",
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  }
+}

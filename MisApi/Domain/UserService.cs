@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MisApi.ConfigMapModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,8 @@ namespace MisApi.Domain
     {
         public string GetToken(int id)
         {
-            return id.ToString();
+            var consulConfig = ConfigHelper.Get<ConsulConfig>("consul");
+            return id.ToString()+ ",端口号:"+ consulConfig.Port;
         }
     }
 }
