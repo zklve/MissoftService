@@ -10,9 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Ocelot.Cache;
+using Ocelot.Cache.CacheManager;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Consul;
+using Ocelot.Provider.Polly;
 using Ocelot.Values;
 
 namespace OcelotDemoApi
@@ -31,7 +34,11 @@ namespace OcelotDemoApi
         {
             //services.AddControllers();
             services.AddOcelot()
-                .AddConsul();
+                .AddConsul()
+                //.AddCacheManager(configBuilder => { configBuilder.WithDictionaryHandle(); })
+                .AddPolly();
+            //×Ô¶¨Òå»º´æ
+            //services.AddSingleton<IOcelotCache<>>
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

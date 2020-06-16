@@ -5,11 +5,33 @@
       "DownstreamScheme": "http",
       //"UseServiceDiscovery": true,
       "UpstreamPathTemplate": "/{url}",
-      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamHttpMethod": [ "Get", "Post" ],
       "ServiceName": "zklService",
       "LoadBalancerOptions": {
         //"Type": "LeastConnection"
         "Type": "RoundRobin"
+      },
+      //缓存
+      //"FileCacheOptions": {
+      //  "TtlSeconds": 15,
+      //  "Region": "UserCache"
+      //},
+      //熔断
+      //"QosOptions": {
+      //  //允许多少个异常请求
+      //  "ExceptionsAllowedBeforeBreaking": 3,
+      //  //熔断时间
+      //  "DurationOfBreak": 1000,
+      //  //超时时间
+      //  "TimeoutValue": 5000
+      //},
+      //限流
+      "RateLimitOptions": {
+        "ClientWhitelist": [], //白名单 header 中加clientid
+        "EnableRateLimiting": true,
+        "Period": "5m", //1s,5m,1h,1d  时间段
+        "PeriodTimespan": 1000, //多少秒之后客户端可以重试
+        "Limit": 1 //时间段内最大请求数量
       }
     }
   ],
