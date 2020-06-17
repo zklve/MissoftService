@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MisApi.Domain;
+using MiRregConsulApi.Domain;
 
-namespace MisApi.Controllers
+namespace MiRregConsulApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

@@ -1,6 +1,6 @@
 using System;
 
-namespace MiRregConsulApi
+namespace IdentityServer4AuthCenter
 {
     public class WeatherForecast
     {

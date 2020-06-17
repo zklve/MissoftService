@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MisApi", "MisApi\MisApi.csproj", "{7EC86A83-FD0B-4D66-A113-633023998CEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiRregConsulApi", "MisApi\MiRregConsulApi.csproj", "{7EC86A83-FD0B-4D66-A113-633023998CEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotDemoApi", "OcelotDemoApi\OcelotDemoApi.csproj", "{B4E08672-2216-469E-8F3A-737B8EF4922A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotDemoApi", "OcelotDemoApi\OcelotDemoApi.csproj", "{B4E08672-2216-469E-8F3A-737B8EF4922A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4AuthCenter", "IdentityServer4Auth\IdentityServer4AuthCenter.csproj", "{91CE77B5-713E-42B7-8EAE-0152193ECE40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityAuthApi", "IdentityAuthApi\IdentityAuthApi.csproj", "{04042F80-8A3A-483C-9451-3B57B3FB992E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{B4E08672-2216-469E-8F3A-737B8EF4922A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E08672-2216-469E-8F3A-737B8EF4922A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4E08672-2216-469E-8F3A-737B8EF4922A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91CE77B5-713E-42B7-8EAE-0152193ECE40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91CE77B5-713E-42B7-8EAE-0152193ECE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91CE77B5-713E-42B7-8EAE-0152193ECE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91CE77B5-713E-42B7-8EAE-0152193ECE40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04042F80-8A3A-483C-9451-3B57B3FB992E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04042F80-8A3A-483C-9451-3B57B3FB992E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04042F80-8A3A-483C-9451-3B57B3FB992E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04042F80-8A3A-483C-9451-3B57B3FB992E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

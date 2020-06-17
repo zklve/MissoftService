@@ -10,9 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using MiRregConsulApi.Domain;
 
-namespace MiRregConsulApi
+namespace IdentityAuthApi
 {
     public class Startup
     {
@@ -27,7 +26,14 @@ namespace MiRregConsulApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<IUserService, UserService>();
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(option =>
+                {
+                    //鉴权中心
+                    option.Authority = "http://localhost:7200";
+                    option.ApiName = "UserApi";
+                    option.RequireHttpsMetadata = false;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,15 +47,15 @@ namespace MiRregConsulApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            //鉴权
+            app.UseAuthentication();
+            //授权
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-
-            this.Configuration.ConsulRegist();
         }
     }
 }

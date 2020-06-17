@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,11 +33,26 @@ namespace OcelotDemoApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //鉴权中心
+            string authKey = "UserGatewayKey";
+            services.AddAuthentication("Bearer")
+               .AddIdentityServerAuthentication(authKey, option =>
+               {
+                    //鉴权中心
+                   option.Authority = "http://localhost:7200";
+                   option.ApiName = "UserApi";
+                   option.RequireHttpsMetadata = false;
+                   option.SupportedTokens = SupportedTokens.Both;
+               });
+
             //services.AddControllers();
             services.AddOcelot()
+                //服务注册与发现
                 .AddConsul()
                 //.AddCacheManager(configBuilder => { configBuilder.WithDictionaryHandle(); })
-                .AddPolly();
+                //限流
+                .AddPolly()
+                ;
             //自定义缓存
             //services.AddSingleton<IOcelotCache<>>
         }

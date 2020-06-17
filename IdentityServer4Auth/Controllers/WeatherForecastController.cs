@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace MiRregConsulApi.Controllers
+namespace IdentityServer4AuthCenter.Controllers
 {
     [ApiController]
     [Route("[controller]")]

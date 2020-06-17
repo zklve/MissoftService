@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MisApi.ConfigMapModel
+namespace MiRregConsulApi.ConfigMapModel
 {
     public class ConsulConfig
     {

@@ -1,12 +1,12 @@
 ﻿using Consul;
 using Microsoft.Extensions.Configuration;
-using MisApi.ConfigMapModel;
+using MiRregConsulApi.ConfigMapModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MisApi
+namespace MiRregConsulApi
 {
     public static class ConsulHelper
     {

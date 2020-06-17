@@ -11,6 +11,11 @@
         //"Type": "LeastConnection"
         "Type": "RoundRobin"
       },
+      //identityserver 4 ¼øÈ¨
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "UserGatewayKey",
+        "AllowedScopes": []
+      },
       //»º´æ
       //"FileCacheOptions": {
       //  "TtlSeconds": 15,

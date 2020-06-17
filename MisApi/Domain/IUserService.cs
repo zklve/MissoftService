@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MisApi.Domain
+namespace MiRregConsulApi.Domain
 {
     public interface IUserService
     {

@@ -1,10 +1,10 @@
-﻿using MisApi.ConfigMapModel;
+﻿using MiRregConsulApi.ConfigMapModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MisApi.Domain
+namespace MiRregConsulApi.Domain
 {
     public class UserService : IUserService
     {
